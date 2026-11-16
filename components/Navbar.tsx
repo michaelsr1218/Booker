@@ -11,7 +11,7 @@ type NavbarProps = {
 export function Navbar({currentUser, onUserChange}: NavbarProps){
     return(
         <header className='flex items-center justify-between p-4 bg-slate-900 text-white shadow-md'>
-            <h1 className='text-xl font-bold'>Venue Booker</h1>
+            <h1 className='text-xl font-bold'>Booker</h1>
             <div className='flex items-center gap-3'>
                 <span className='text-sm text-slate-300'>Simulation:</span>
                 <select

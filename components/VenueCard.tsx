@@ -38,7 +38,8 @@ export function VenueCard({ venue, bookings, currentUser, onBookClick }: VenueCa
               {venueBookings.map((b) => (
                 <li
                   key={b.id}
-                  className="text-xs bg-slate-700/60 p-2 rounded border border-slate-600/50 text-slate-200 flex justify-between items-center"
+                  //className="text-xs bg-slate-700/60 p-2 rounded border border-slate-600/50 text-slate-200 flex justify-between items-center"
+                className="text-xm p-2 flex justify-between items-center"
                 >
                   <span>
                     {b.startTime} - {b.endTime}
@@ -56,7 +57,7 @@ export function VenueCard({ venue, bookings, currentUser, onBookClick }: VenueCa
         {isTeacher ? (
           <button
             onClick={() => onBookClick(venue)}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm py-2 px-4 rounded transition-colors cursor-pointer"
+            className="w-full bg-blue-900 hover:bg-blue-500 text-white font-medium text-sm py-2 px-4 rounded transition-colors cursor-pointer"
           >
             Book Venue
           </button>

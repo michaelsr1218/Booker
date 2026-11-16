@@ -1,30 +1,20 @@
-export type UserRole = 'teacher' | 'student' | 'admin';
+import { User as PrismaUser, Venue as PrismaVenue, Booking as PrismaBooking } from '@prisma/client';
 
-export type User = {
-    id: string;
-    name: string;
-    role: UserRole;
+export type UserRole = string;
+
+export type User = PrismaUser;
+
+export type Venue = PrismaVenue;
+
+export type Booking = PrismaBooking & {
+  teacherName?: string;
+  date?: string;
+  user?: User;
+  venue?: Venue;
 };
 
-export type Venue = {
-    id: string;
-    name: string;
-    capacity: number;
-    location: string;
-};
-
-export type Booking = {
-    id: string;
-    venueId: string;
-    teacherName: string;
-    date: string;
-    startTime: string;
-    endTime: string;
-};
-
-export type FilterState = {
-    status: 'all' | 'available' | 'booked';
-    minCapacity: number;
-    selectedTime: string;
-};
-
+export interface FilterState {
+  status: 'all' | 'available' | 'booked';
+  minCapacity: number;
+  selectedTime: string;
+}

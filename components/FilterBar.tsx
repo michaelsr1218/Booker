@@ -10,7 +10,7 @@ type FilterBarProps = {
 export function FilterBar({ filters, onFilterChange }: FilterBarProps) {
   return (
     <div className="flex flex-wrap items-center gap-4 p-4 bg-slate-800 rounded-lg text-white mb-6">
-      {/* Status Filter */}
+      {/* Status Filter */}    
       <div className="flex flex-col gap-1">
         <label className="text-xs text-slate-300 font-medium">Availability</label>
         <select

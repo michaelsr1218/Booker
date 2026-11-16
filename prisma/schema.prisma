@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String    @id @default(cuid())
+  name     String
+  role     String
+  bookings Booking[]
+}
+
+model Venue {
+  id       String    @id @default(cuid())
+  name     String
+  location String
+  capacity Int
+  bookings Booking[]
+}
+
+model Booking {
+  id        String   @id @default(cuid())
+  startTime String
+  endTime   String
+  venueId   String
+  venue     Venue    @relation(fields: [venueId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}

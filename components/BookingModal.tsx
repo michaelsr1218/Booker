@@ -55,15 +55,17 @@ export function BookingModal({
     }
 
     // 4. Trigger creation if all checks pass
-    onSubmit({
-      venueId: venue.id,
-      //teacherId: currentUser.id,
-      teacherName: currentUser.name,
-      date,
-      startTime,
-      endTime,
-    });
+// Inside components/BookingModal.tsx -> handleSubmit function:
 
+onSubmit({
+  venueId: venue.id,
+  userId: currentUser.id,
+  teacherName: currentUser.name,
+  date, // or your date state variable name
+  startTime,
+  endTime,
+  createdAt: new Date(),
+});
     onClose();
   };
 
